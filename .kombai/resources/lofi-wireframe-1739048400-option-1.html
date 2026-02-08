@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Option 1 - Modern Storytelling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .wireframe-header {
+            background: #f5f5f5;
+            padding: 30px;
+            border: 3px solid #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .wireframe-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .wireframe-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            padding: 40px;
+            border: 2px dashed #999;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .section-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #fff;
+            padding: 5px 15px;
+            border: 2px solid #666;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 40px;
+            background: #e5e5e5;
+            border: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border: 2px solid #999;
+            background: #fff;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 3px solid #333;
+            background: #333;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        .btn-outline {
+            background: #fff;
+            color: #333;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 10px 20px;
+            border: 2px solid #ccc;
+            background: #f9f9f9;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-small {
+            width: 80px;
+            height: 30px;
+            background: #e5e5e5;
+            border: 1px solid #999;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #999;
+            background: #fff;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin: 60px 0;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #e5e5e5;
+            border: 3px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .content-block h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .content-block p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .case-study-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .case-card {
+            border: 2px solid #999;
+            background: #fff;
+            padding: 0;
+            position: relative;
+        }
+
+        .case-image {
+            width: 100%;
+            height: 250px;
+            background: #e5e5e5;
+            border-bottom: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .case-info {
+            padding: 20px;
+        }
+
+        .case-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .case-description {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .testimonial-carousel {
+            text-align: center;
+            padding: 60px;
+            border: 3px solid #999;
+            background: #fafafa;
+            margin: 40px 0;
+        }
+
+        .testimonial-text {
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #ccc;
+            border: 2px solid #999;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid #999;
+            background: #fff;
+        }
+
+        .dot.active {
+            background: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            padding: 40px;
+            border: 2px solid #999;
+            background: #fff;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #e5e5e5;
+            border: 2px solid #999;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .tag-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            border: 1px solid #999;
+            background: #f5f5f5;
+            font-size: 12px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 80px 40px;
+            background: #333;
+            color: #fff;
+            border: 3px solid #000;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .footer {
+            padding: 40px;
+            border-top: 2px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .reuse-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #FF9800;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+
+            .stats-grid,
+            .case-study-showcase,
+            .services-grid,
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wireframe-header">
+        <h1>Option 1: Modern Storytelling</h1>
+        <p>Narrative-driven layout with spacious sections and smooth scroll experience</p>
+    </div>
+
+    <!-- Header -->
+    <!-- REUSABLE: Header structure from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .header, .header-content">[REUSE] Header</span>
+        <span class="section-label">STICKY HEADER</span>
+        <div class="header-nav">
+            <div class="logo-placeholder">LOGO</div>
+            <div class="nav-links">
+                <div class="nav-link">Stories</div>
+                <div class="nav-link">Services</div>
+                <div class="nav-link">About</div>
+            </div>
+            <button class="btn">Let's Talk</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <!-- NEW COMPONENT: Full-screen hero with scroll indicator -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New full-screen hero component">[NEW] FullScreenHero</span>
+        <span class="section-label">FULL-SCREEN HERO</span>
+        <div class="hero-section">
+            <div class="hero-title">
+                Transform your B2B growth<br>
+                with AI-powered precision
+            </div>
+            <div class="hero-subtitle">
+                From strategy to execution, we handle everything.
+            </div>
+            <div class="cta-group">
+                <button class="btn">Start Your Journey</button>
+                <div class="badge">
+                    <span>Featured on</span>
+                    <div class="logo-small"></div>
+                </div>
+            </div>
+            <div style="margin-top: 60px; color: #999;">↓ Scroll to explore</div>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <!-- NEW COMPONENT: Animated stats grid -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New animated stats component">[NEW] StatsGrid</span>
+        <span class="section-label">IMPACT METRICS</span>
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 20px;">Results that speak volumes</h2>
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">$47M+</div>
+                <div class="stat-label">Revenue Generated</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">230%</div>
+                <div class="stat-label">Avg. Growth Rate</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">89</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">4.9★</div>
+                <div class="stat-label">Client Rating</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="color: #666; font-size: 18px; margin-bottom: 20px;">
+                Trusted by industry leaders across North America
+            </p>
+            <div style="display: flex; gap: 40px; justify-content: center; opacity: 0.5;">
+                <div style="width: 100px; height: 30px; border: 2px solid #999; background: #f0f0f0;"></div>
+                <div style="width: 100px; height: 30px; border: 2px solid #999; background: #f0f0f0;"></div>
+                <div style="width: 100px; height: 30px; border: 2px solid #999; background: #f0f0f0;"></div>
+                <div style="width: 100px; height: 30px; border: 2px solid #999; background: #f0f0f0;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Section 1 -->
+    <!-- NEW COMPONENT: Split story section with image -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New split-layout story component">[NEW] StorySplit</span>
+        <span class="section-label">OUR APPROACH</span>
+        <div class="story-section">
+            <div class="image-placeholder">
+                [Process Diagram:<br>Strategy → Build → Launch]
+            </div>
+            <div class="content-block">
+                <h2>AI-native methodology</h2>
+                <p>
+                    We don't just use AI as a tool—we've built our entire process around it.
+                    From market research to campaign execution, every step is optimized
+                    for maximum impact and efficiency.
+                </p>
+                <p>
+                    Our proprietary framework combines cutting-edge automation with
+                    strategic human oversight, ensuring you get the best of both worlds.
+                </p>
+                <button class="btn btn-outline">Learn Our Process</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies -->
+    <!-- REUSABLE: Case study cards from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .case-study-card">[REUSE] CaseStudyCard</span>
+        <span class="section-label">SUCCESS STORIES</span>
+        <h2 style="text-align: center; font-size: 48px; margin-bottom: 60px;">Client transformations</h2>
+        <div class="case-study-showcase">
+            <div class="case-card">
+                <div class="case-image">[Case Image]</div>
+                <div class="case-info">
+                    <div class="case-title"></div>
+                    <div class="case-description">417% increase in qualified leads through AI-powered outbound</div>
+                    <div style="margin-top: 15px;">
+                        <span class="tag">Lead Gen</span>
+                        <span class="tag">AI Copy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">[Case Image]</div>
+                <div class="case-info">
+                    <div class="case-title">Kestrl</div>
+                    <div class="case-description">Saved 72 hours/week with centralized AI operations system</div>
+                    <div style="margin-top: 15px;">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Workflow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="case-card">
+                <div class="case-image">[Case Image]</div>
+                <div class="case-info">
+                    <div class="case-title">TechFlow</div>
+                    <div class="case-description">2x pipeline velocity with intelligent sales automation</div>
+                    <div style="margin-top: 15px;">
+                        <span class="tag">Sales Ops</span>
+                        <span class="tag">CRM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonial -->
+    <!-- NEW COMPONENT: Carousel testimonial -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New testimonial carousel component">[NEW] TestimonialCarousel</span>
+        <span class="section-label">CLIENT VOICES</span>
+        <div class="testimonial-carousel">
+            <div class="testimonial-text">
+                "This centralised AI agent is saving each of our 12 team members an hour a day.
+                We won Agency of the Year in Australia."
+            </div>
+            <div class="testimonial-author">
+                <div class="avatar"></div>
+                <div>
+                    <div style="font-weight: bold; font-size: 18px;">Eden Appo</div>
+                    <div style="color: #666; font-size: 14px;">Operations Manager, The Srama Group</div>
+                </div>
+            </div>
+            <div class="carousel-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <!-- REUSABLE: Service cards from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .service-card">[REUSE] ServiceCard</span>
+        <span class="section-label">WHAT WE DO</span>
+        <h2 style="text-align: center; font-size: 48px; margin-bottom: 60px;">Our specializations</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">[Icon]</div>
+                <div class="service-title">Lead Generation</div>
+                <p style="color: #666; margin-bottom: 20px;">
+                    AI-powered outbound campaigns that actually convert
+                </p>
+                <div class="tag-group">
+                    <span class="tag">Cold Email</span>
+                    <span class="tag">Web Scraping</span>
+                    <span class="tag">Lead Magnets</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">[Icon]</div>
+                <div class="service-title">Sales Automation</div>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Streamline your entire sales process from prospect to close
+                </p>
+                <div class="tag-group">
+                    <span class="tag">Hubspot</span>
+                    <span class="tag">Salesforce</span>
+                    <span class="tag">Pipedrive</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">[Icon]</div>
+                <div class="service-title">Project Management</div>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Keep your team aligned with intelligent workflows
+                </p>
+                <div class="tag-group">
+                    <span class="tag">Notion APIs</span>
+                    <span class="tag">Scheduling</span>
+                    <span class="tag">Calendly</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">[Icon]</div>
+                <div class="service-title">Hiring Systems</div>
+                <p style="color: #666; margin-bottom: 20px;">
+                    Find and vet top talent with AI-assisted recruitment
+                </p>
+                <div class="tag-group">
+                    <span class="tag">AI Vetting</span>
+                    <span class="tag">Ashby</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Story Section 2 -->
+    <!-- NEW COMPONENT: About founder section -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New founder spotlight component">[NEW] FounderSpotlight</span>
+        <span class="section-label">WHO WE ARE</span>
+        <div class="story-section">
+            <div class="content-block">
+                <h2>Built by marketers, for marketers</h2>
+                <p>
+                    Founded by <strong>Amr Hasanin</strong>, former marketing lead at Figma and Notion,
+                    we understand the unique challenges of B2B growth at scale.
+                </p>
+                <p>
+                    Our team brings experience from Fortune 500 brands and high-growth startups,
+                    combining strategic thinking with technical execution.
+                </p>
+                <div
+                    style="margin-top: 30px; padding: 20px; border: 2px solid #999; background: #fff; display: inline-flex; gap: 15px; align-items: center;">
+                    <div class="avatar"></div>
+                    <div>
+                        <div style="font-weight: bold;">Amr Hasanin</div>
+                        <div style="color: #666; font-size: 14px;">Founder & CEO</div>
+                    </div>
+                </div>
+            </div>
+            <div class="image-placeholder">
+                [Team Photo or<br>Office Image]
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <!-- REUSABLE: CTA section from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .cta-section">[REUSE] CTASection</span>
+        <div class="cta-section">
+            <h2>Ready to accelerate your growth?</h2>
+            <p>Let's discuss how AI can transform your B2B operations.</p>
+            <button class="btn" style="background: #fff; color: #333;">Get in Touch</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- REUSABLE: Footer from index.html -->
+    <div style="position: relative;">
+        <span class="reuse-badge" title="styles.css .footer">[REUSE] Footer</span>
+        <div class="footer">
+            <div class="logo-placeholder">LOGO</div>
+            <div class="footer-links">
+                <div>Services</div>
+                <div>Work</div>
+                <div>About</div>
+                <div>Contact</div>
+            </div>
+            <div style="color: #999; font-size: 14px;">© 2026 AI Growth Agency</div>
+        </div>
+    </div>
+</body>
+
+</html>

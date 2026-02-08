@@ -28,16 +28,27 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Curtain Gradient -->
     <section class="hero">
-        <div class="container">
+        <!-- Spline 3D Animation Background -->
+        <div id="spline-wrapper" class="spline-container">
+            <!-- Spline viewer will be loaded via Intersection Observer -->
+        </div>
+
+        <div class="container hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
                     The definitive AI growth partner<br>
-                    for fast-moving B2B companies.
+                    for fast-moving SMBs.
                 </h1>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn btn-dark">Let's talk</a>
+                    <a href="#contact" class="btn btn-dark btn-arrow">
+                        Let's talk
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
 
                     <div class="featured-badge">
                         <span>As featured on</span>
@@ -50,30 +61,33 @@
 
     <!-- Stats Section -->
     <section class="stats-section">
-        <div class="container">
-            <span class="section-tag">Our promise.</span>
-            <h2 class="stats-headline">
-                Tens of millions of dollars<br>
-                generated (& more saved).
-            </h2>
-            <p class="stats-description">
-                We work with two types of companies. Established
-                brands looking for a technical marketing & growth
-                partner, and well-funded startups looking to use AI
-                to accelerate their go-to-market. In either case, we
-                bring a proprietary toolset & methodology to the table.
-            </p>
-            <a href="#contact" class="btn btn-dark">Start now</a>
-
-            <div class="partners">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png"
-                    alt="Microsoft" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"
-                    alt="Yahoo" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Shopify_logo_2018.svg/446px-Shopify_logo_2018.svg.png"
-                    alt="Shopify" class="partner-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png"
-                    alt="Bloomberg" class="partner-logo">
+        <div class="container stats-container">
+            <div class="stats-content">
+                <span class="section-tag-numbered">
+                    <span class="tag-number">1</span>
+                    <span>Introducing SystemAI.</span>
+                </span>
+                <h2 class="stats-headline">
+                    Tens of millions of dollars<br>
+                    generated (& more saved).
+                </h2>
+                <p class="stats-description">
+                    We work with two types of companies. Established
+                    brands looking for a technical marketing & growth
+                    partner, and well-funded startups looking to use AI
+                    to accelerate their go-to-market. In either case, we
+                    bring a proprietary toolset & methodology to the table.
+                </p>
+                <a href="#contact" class="btn btn-dark btn-arrow">
+                    Let's talk
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+            <div class="stats-image">
+                <img src="assets/kestrl_team_photo.jpg" alt="SystemAI Team">
             </div>
         </div>
     </section>
@@ -91,7 +105,7 @@
                 <a href="#" class="case-study-card">
                     <div class="case-study-image">
                         <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80"
-                            alt="1SecondCopy">
+                            alt="The Srama Group">
                         <div class="case-study-arrow">
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +114,7 @@
                             </svg>
                         </div>
                     </div>
-                    <span class="case-study-name">1SecondCopy</span>
+                    <span class="case-study-name">The Srama Group</span>
                 </a>
 
                 <a href="#" class="case-study-card case-study-card-large">
@@ -296,6 +310,41 @@
             <p class="copyright">&copy; 2026 AI Growth Agency. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Spline 3D Viewer Library -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.48/build/spline-viewer.js"></script>
+
+    <!-- Spline Intersection Observer for Performance -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wrapper = document.getElementById("spline-wrapper");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Load the spline-viewer when it comes into view
+                        wrapper.innerHTML = `<spline-viewer url="https://prod.spline.design/8p8tQvgv80YhZVXM/scene.splinecode"></spline-viewer>`;
+                        observer.disconnect(); // Stop observing once loaded
+                    }
+                });
+            });
+
+            observer.observe(wrapper);
+        });
+
+        document.addEventListener("scroll", () => {
+            const viewer = document.querySelector("spline-viewer");
+            if (!viewer) return;
+
+            const rect = viewer.getBoundingClientRect();
+            // Pause if out of view, play if in view
+            if (rect.bottom < 0 || rect.top > window.innerHeight) {
+                viewer.pause?.();
+            } else {
+                viewer.play?.();
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -205,8 +205,9 @@ a {
     display: flex;
     position: relative;
     background-color: #f7f7f8;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em;
+    height: 150px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .header-content {
@@ -299,26 +300,52 @@ a {
 
 /* ===== Hero Section ===== */
 .hero {
-    padding: calc(72px + var(--spacing-24)) 0 var(--spacing-20);
-    background: var(--color-white);
+    padding: 0;
+    background: #e8e8e8;
+    position: relative;
+    overflow: hidden;
+    height: 630px;
+    display: flex;
+    align-items: flex-end;
 }
 
-.hero .container {
-    max-width: 100%;
-    padding: 0;
+.hero-container {
+    position: relative;
+    z-index: 2;
+    padding: 0 var(--spacing-6);
+    padding-bottom: var(--spacing-12);
 }
 
 .hero-content {
     max-width: 100%;
 }
 
+/* Spline 3D Animation Container */
+.spline-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.spline-container spline-viewer {
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+
 .hero-title {
-    font-size: 80px;
-    font-weight: 600;
-    line-height: 1.15;
+    font-size: clamp(48px, 8vw, 90px);
+    font-weight: 500;
+    line-height: 1.05;
     margin-bottom: var(--spacing-8);
     color: var(--color-gray-900);
     text-align: center;
+    letter-spacing: -0.03em;
 }
 
 /* Striped Text Effect */
@@ -336,10 +363,27 @@ a {
 
 .hero-cta {
     display: flex;
-    gap: var(--spacing-4);
+    gap: var(--spacing-6);
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-4) var(--spacing-3) var(--spacing-6);
+    border-radius: var(--border-radius-full);
+}
+
+.btn-arrow svg {
+    width: 20px;
+    height: 20px;
+    background: var(--color-white);
+    border-radius: 50%;
+    padding: 4px;
+    color: var(--color-black);
 }
 
 .featured-badge {
@@ -378,20 +422,79 @@ a {
     background: var(--color-gray-50);
 }
 
+.stats-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .stats-headline {
-    font-size: clamp(1.75rem, 4vw, var(--font-size-4xl));
-    font-weight: 600;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
     margin-bottom: var(--spacing-6);
     color: var(--color-gray-900);
+    letter-spacing: -0.02em;
 }
 
 .stats-description {
-    font-size: var(--font-size-base);
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
     color: var(--color-gray-600);
-    max-width: 500px;
+    max-width: 100%;
     margin-bottom: var(--spacing-8);
-    line-height: 1.7;
+    line-height: 1.6;
+}
+
+.stats-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.stats-image img {
+    -webkit-text-size-adjust: 100%;
+    --almond-color: #faf5ef;
+    --secondary-color: #909090;
+    --primary-color: #182639;
+    --white: white;
+    --blue-green: #23354e;
+    --silver-color: #e5e5e5;
+    --dim-gray: #909090;
+    --transparent: transparent;
+    --background-color: #e2e2e2;
+    --black: #000;
+    color: var(--black);
+    font-family: Dmsans, Arial, sans-serif;
+    font-size: 1.25vw;
+    font-weight: 400;
+    line-height: 130%;
+    box-sizing: border-box;
+    border: 0;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: .75em;
+    width: 100%;
+    max-width: 100%;
+    float: right;
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-image {
+        order: -1;
+        justify-content: center;
+    }
 }
 
 .partners {
@@ -744,6 +847,11 @@ a {
     text-align: center;
     background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-black) 100%);
     color: var(--color-white);
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cta-title {

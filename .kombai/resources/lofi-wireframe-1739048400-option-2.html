@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Option 2 - Visual Grid</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: #fff;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .wireframe-header {
+            background: #f5f5f5;
+            padding: 30px;
+            border: 3px solid #333;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .wireframe-header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .wireframe-header p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            padding: 40px;
+            border: 2px dashed #999;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .section-label {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #fff;
+            padding: 5px 15px;
+            border: 2px solid #666;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .logo-placeholder {
+            width: 150px;
+            height: 40px;
+            background: #e5e5e5;
+            border: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border: 2px solid #999;
+            background: #fff;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: 3px solid #333;
+            background: #333;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        .btn-outline {
+            background: #fff;
+            color: #333;
+        }
+
+        .hero-compact {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .trust-bar {
+            padding: 20px;
+            background: #f9f9f9;
+            border: 2px solid #e5e5e5;
+            text-align: center;
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 15px;
+            opacity: 0.5;
+        }
+
+        .logo-small {
+            width: 80px;
+            height: 25px;
+            background: #ccc;
+            border: 1px solid #999;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .bento-item {
+            border: 2px solid #999;
+            background: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .bento-large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .bento-wide {
+            grid-column: span 2;
+        }
+
+        .bento-tall {
+            grid-row: span 2;
+        }
+
+        .bento-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .bento-content {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .bento-image {
+            width: 100%;
+            height: 120px;
+            background: #e5e5e5;
+            border: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .stats-compact {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 40px;
+            background: #f5f5f5;
+            border: 2px solid #ccc;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .masonry-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .masonry-item {
+            border: 2px solid #999;
+            background: #fff;
+            padding: 0;
+            position: relative;
+        }
+
+        .masonry-image {
+            width: 100%;
+            height: 280px;
+            background: #e5e5e5;
+            border-bottom: 2px solid #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .masonry-content {
+            padding: 20px;
+        }
+
+        .masonry-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .tag-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            border: 1px solid #999;
+            background: #f5f5f5;
+            font-size: 11px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .testimonial-card {
+            border: 2px solid #999;
+            background: #fff;
+            padding: 25px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .author-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: #ccc;
+            border: 2px solid #999;
+        }
+
+        .author-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .author-role {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .services-compact {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .service-box {
+            border: 2px solid #999;
+            background: #fff;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: #e5e5e5;
+            border: 2px solid #999;
+            margin: 0 auto 15px;
+        }
+
+        .service-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cta-banner {
+            padding: 60px 40px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            border: 3px solid #000;
+        }
+
+        .cta-banner h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        .footer-compact {
+            padding: 30px;
+            border-top: 2px solid #ccc;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-col div {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .reuse-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #4CAF50;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            background: #FF9800;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+
+            .bento-grid,
+            .masonry-grid,
+            .testimonial-grid,
+            .services-compact,
+            .stats-compact,
+            .footer-compact {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-large,
+            .bento-wide,
+            .bento-tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wireframe-header">
+        <h1>Option 2: Visual Grid</h1>
+        <p>Card-based layout with balanced spacing and visual hierarchy</p>
+    </div>
+
+    <!-- Header -->
+    <!-- REUSABLE: Header structure from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .header, .header-content">[REUSE] Header</span>
+        <span class="section-label">TOP NAVIGATION</span>
+        <div class="header-nav">
+            <div class="logo-placeholder">LOGO</div>
+            <div class="nav-links">
+                <div class="nav-link">Work</div>
+                <div class="nav-link">Services</div>
+                <div class="nav-link">About</div>
+                <div class="nav-link">Contact</div>
+            </div>
+            <button class="btn">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <!-- REUSABLE: Hero section from index.html -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .hero">[REUSE] Hero</span>
+        <span class="section-label">HERO SECTION</span>
+        <div class="hero-compact">
+            <div class="hero-title">
+                Your AI growth partner<br>for B2B excellence
+            </div>
+            <div class="hero-subtitle">
+                Tens of millions generated. Hundreds of hours saved. Real results.
+            </div>
+            <div class="cta-row">
+                <button class="btn">Let's Talk</button>
+                <button class="btn btn-outline">View Case Studies</button>
+            </div>
+        </div>
+        <div class="trust-bar">
+            <div style="color: #666; font-size: 14px; margin-bottom: 5px;">Trusted by</div>
+            <div class="trust-logos">
+                <div class="logo-small"></div>
+                <div class="logo-small"></div>
+                <div class="logo-small"></div>
+                <div class="logo-small"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bento Grid - Key Features -->
+    <!-- NEW COMPONENT: Bento grid layout -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New bento grid component">[NEW] BentoGrid</span>
+        <span class="section-label">KEY FEATURES</span>
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 40px;">Why choose us</h2>
+        <div class="bento-grid">
+            <div class="bento-item bento-large">
+                <div>
+                    <div class="bento-title">AI-Native<br>Methodology</div>
+                    <div class="bento-content">Built from the ground up with AI at the core</div>
+                </div>
+                <div class="bento-image">[Workflow Diagram]</div>
+            </div>
+            <div class="bento-item">
+                <div class="bento-title">$47M+</div>
+                <div class="bento-content">Revenue generated for clients</div>
+            </div>
+            <div class="bento-item">
+                <div class="bento-title">230%</div>
+                <div class="bento-content">Average growth rate</div>
+            </div>
+            <div class="bento-item bento-wide">
+                <div>
+                    <div class="bento-title">Featured Partner</div>
+                    <div class="bento-content">Official n8n implementation partner</div>
+                </div>
+                <div style="width: 120px; height: 35px; background: #e5e5e5; border: 2px solid #999; margin-top: 15px;">
+                </div>
+            </div>
+            <div class="bento-item">
+                <div class="bento-title">89</div>
+                <div class="bento-content">Happy clients</div>
+            </div>
+            <div class="bento-item">
+                <div class="bento-title">4.9★</div>
+                <div class="bento-content">Client rating</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Case Studies Masonry -->
+    <!-- REUSABLE: Case study cards -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .case-study-card">[REUSE] CaseStudyCard</span>
+        <span class="section-label">CASE STUDIES</span>
+        <h2 style="font-size: 42px; margin-bottom: 20px;">Recent work</h2>
+        <p style="color: #666; font-size: 18px; margin-bottom: 40px;">See how we've transformed businesses with AI</p>
+        <div class="masonry-grid">
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title"></div>
+                    <div style="font-size: 14px; color: #666;">417% increase in qualified leads</div>
+                    <div class="tag-group">
+                        <span class="tag">Lead Gen</span>
+                        <span class="tag">AI Copy</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title">Kestrl</div>
+                    <div style="font-size: 14px; color: #666;">72 hours/week saved with automation</div>
+                    <div class="tag-group">
+                        <span class="tag">Automation</span>
+                        <span class="tag">Workflow</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title">TechFlow</div>
+                    <div style="font-size: 14px; color: #666;">2x pipeline velocity achieved</div>
+                    <div class="tag-group">
+                        <span class="tag">Sales Ops</span>
+                        <span class="tag">CRM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title">DataCorp</div>
+                    <div style="font-size: 14px; color: #666;">Built end-to-end lead engine</div>
+                    <div class="tag-group">
+                        <span class="tag">Full Stack</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title">MarketPro</div>
+                    <div style="font-size: 14px; color: #666;">Automated hiring pipeline</div>
+                    <div class="tag-group">
+                        <span class="tag">Recruitment</span>
+                    </div>
+                </div>
+            </div>
+            <div class="masonry-item">
+                <div class="masonry-image">[Case Image]</div>
+                <div class="masonry-content">
+                    <div class="masonry-title">GrowthLab</div>
+                    <div style="font-size: 14px; color: #666;">Scaled outbound 10x</div>
+                    <div class="tag-group">
+                        <span class="tag">Outbound</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-outline">View All Projects</button>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <!-- NEW COMPONENT: Compact service grid -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New compact service grid">[NEW] ServiceGrid</span>
+        <span class="section-label">SERVICES</span>
+        <h2 style="text-align: center; font-size: 42px; margin-bottom: 40px;">What we specialize in</h2>
+        <div class="services-compact">
+            <div class="service-box">
+                <div class="service-icon"></div>
+                <div class="service-name">Lead Generation</div>
+                <div class="tag-group" style="justify-content: center;">
+                    <span class="tag">Email</span>
+                    <span class="tag">Scraping</span>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon"></div>
+                <div class="service-name">Sales Automation</div>
+                <div class="tag-group" style="justify-content: center;">
+                    <span class="tag">HubSpot</span>
+                    <span class="tag">Salesforce</span>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon"></div>
+                <div class="service-name">Project Mgmt</div>
+                <div class="tag-group" style="justify-content: center;">
+                    <span class="tag">Notion</span>
+                    <span class="tag">APIs</span>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-icon"></div>
+                <div class="service-name">Hiring Systems</div>
+                <div class="tag-group" style="justify-content: center;">
+                    <span class="tag">AI Vetting</span>
+                    <span class="tag">Ashby</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <!-- REUSABLE: Testimonial cards -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .testimonial-card">[REUSE] TestimonialCard</span>
+        <span class="section-label">TESTIMONIALS</span>
+        <h2 style="font-size: 42px; margin-bottom: 40px;">Client feedback</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Saving 72 hours a week with their AI system. We won Agency of the Year!"
+                </div>
+                <div class="author-row">
+                    <div class="avatar"></div>
+                    <div>
+                        <div class="author-name">Eden Appo</div>
+                        <div class="author-role">Ops Manager</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Their AI-powered approach saved us 40+ hours per week. ROI was immediate."
+                </div>
+                <div class="author-row">
+                    <div class="avatar"></div>
+                    <div>
+                        <div class="author-name">Marcus Johnson</div>
+                        <div class="author-role">CEO</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Unmatched expertise in B2B growth. Results exceeded our expectations."
+                </div>
+                <div class="author-row">
+                    <div class="avatar"></div>
+                    <div>
+                        <div class="author-name">Emily Roberts</div>
+                        <div class="author-role">Founder</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Compact -->
+    <!-- NEW COMPONENT: Compact about section -->
+    <div class="section" style="position: relative;">
+        <span class="new-badge" title="New compact about section">[NEW] AboutCompact</span>
+        <span class="section-label">ABOUT</span>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 42px; margin-bottom: 20px;">AI-native since 2024</h2>
+            <p style="font-size: 18px; color: #666; line-height: 1.7; margin-bottom: 30px;">
+                Founded by <strong>Amr Hasanin</strong>, former marketing lead at Figma and Notion.
+                One of the few AI marketing agencies in Canada bringing Fortune 500 experience
+                to high-growth startups.
+            </p>
+            <div
+                style="display: inline-flex; padding: 15px 25px; border: 2px solid #999; background: #fff; gap: 15px; align-items: center;">
+                <div class="avatar"></div>
+                <div style="text-align: left;">
+                    <div style="font-weight: bold;">Amr Hasanin</div>
+                    <div style="color: #666; font-size: 14px;">Founder & CEO</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <!-- REUSABLE: CTA section -->
+    <div class="section" style="position: relative;">
+        <span class="reuse-badge" title="styles.css .cta-section">[REUSE] CTASection</span>
+        <div class="cta-banner">
+            <h2>Ready to accelerate your growth?</h2>
+            <p>Let's discuss how AI can transform your B2B operations.</p>
+            <button class="btn" style="background: #fff; color: #333;">Get in Touch</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- NEW COMPONENT: Compact footer grid -->
+    <div style="position: relative;">
+        <span class="new-badge" title="New footer grid layout">[NEW] FooterGrid</span>
+        <div class="footer-compact">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <div>About</div>
+                <div>Team</div>
+                <div>Careers</div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <div>Lead Gen</div>
+                <div>Sales Ops</div>
+                <div>Automation</div>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <div>Blog</div>
+                <div>Case Studies</div>
+                <div>Guides</div>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div>hello@agency.ai</div>
+                <div>LinkedIn</div>
+                <div>Twitter</div>
+            </div>
+        </div>
+        <div style="text-align: center; padding: 20px; color: #999; font-size: 12px; border-top: 1px solid #e5e5e5;">
+            © 2026 AI Growth Agency. All rights reserved.
+        </div>
+    </div>
+</body>
+
+</html>
