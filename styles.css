@@ -91,7 +91,7 @@ a {
 /* ===== Utility Classes ===== */
 .container {
     width: 100%;
-    max-width: var(--container-max-width);
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-6);
 }
@@ -179,26 +179,83 @@ a {
 
 /* ===== Header ===== */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    -webkit-text-size-adjust: 100%;
+    --almond-color: #faf5ef;
+    --secondary-color: #909090;
+    --primary-color: #182639;
+    --white: white;
+    --blue-green: #23354e;
+    --silver-color: #e5e5e5;
+    --dim-gray: #909090;
+    --transparent: transparent;
+    --background-color: #e2e2e2;
+    --black: #000;
+    color: var(--black);
+    font-family: Dmsans, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 4.267vw;
+    box-sizing: border-box;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-gray-100);
+    background: #ddd;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    position: relative;
+    background-color: #f7f7f8;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
+    -webkit-text-size-adjust: 100%;
+    --almond-color: #faf5ef;
+    --secondary-color: #909090;
+    --primary-color: #182639;
+    --white: white;
+    --blue-green: #23354e;
+    --silver-color: #e5e5e5;
+    --dim-gray: #909090;
+    --transparent: transparent;
+    --background-color: #e2e2e2;
+    --black: #000;
+    color: var(--black);
+    font-family: Dmsans, Arial, sans-serif;
+    font-size: 1.25vw;
+    font-weight: 400;
+    line-height: 130%;
+    box-sizing: border-box;
     justify-content: space-between;
-    height: 72px;
+    align-items: center;
+    width: 100%;
+    display: flex;
 }
 
 .logo img {
-    height: 140px;
-    width: auto;
+    -webkit-text-size-adjust: 100%;
+    --almond-color: #faf5ef;
+    --secondary-color: #909090;
+    --primary-color: #182639;
+    --white: white;
+    --blue-green: #23354e;
+    --silver-color: #e5e5e5;
+    --dim-gray: #909090;
+    --transparent: transparent;
+    --background-color: #e2e2e2;
+    --black: #000;
+    font-family: Dmsans, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    font-size: 4.267vw;
+    color: #333;
+    box-sizing: border-box;
+    border: 0;
+    vertical-align: middle;
+    max-width: 100%;
+    display: inline-block;
+    width: 100%;
 }
 
 .nav {
@@ -207,10 +264,33 @@ a {
 }
 
 .nav-link {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--color-gray-600);
-    transition: color var(--transition-fast);
+    -webkit-text-size-adjust: 100%;
+    --almond-color: #faf5ef;
+    --secondary-color: #909090;
+    --primary-color: #182639;
+    --white: white;
+    --blue-green: #23354e;
+    --silver-color: #e5e5e5;
+    --dim-gray: #909090;
+    --transparent: transparent;
+    --background-color: #e2e2e2;
+    --black: #000;
+    font-family: Dmsans, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 130%;
+    box-sizing: border-box;
+    background-color: #0000;
+    vertical-align: top;
+    color: #222;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    font-size: 1em;
+    max-width: 100%;
 }
 
 .nav-link:hover {
@@ -223,16 +303,22 @@ a {
     background: var(--color-white);
 }
 
+.hero .container {
+    max-width: 100%;
+    padding: 0;
+}
+
 .hero-content {
-    max-width: 800px;
+    max-width: 100%;
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, var(--font-size-5xl));
+    font-size: 80px;
     font-weight: 600;
     line-height: 1.15;
     margin-bottom: var(--spacing-8);
     color: var(--color-gray-900);
+    text-align: center;
 }
 
 /* Striped Text Effect */
@@ -253,6 +339,7 @@ a {
     gap: var(--spacing-4);
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
 
 .featured-badge {
@@ -271,7 +358,7 @@ a {
 }
 
 .featured-logo {
-    height: 20px;
+    height: 40px;
     width: auto;
 }
 
