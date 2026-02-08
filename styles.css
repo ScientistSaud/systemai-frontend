@@ -265,7 +265,7 @@ a {
 }
 
 .featured-badge span {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-2xl);
     color: var(--color-gray-500);
     white-space: nowrap;
 }
