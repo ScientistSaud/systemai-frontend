@@ -32,111 +32,57 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="common-wrap">
-            <div class="header-inner">
-                <a href="/" class="logo">
-                    <img src="assets/system-ai-logos/systemai-logo-v3.svg" alt="System AI">
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img class="logo-img" src="assets/system-ai-logos/systemai-logo-v3.svg" alt="System AI">
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="#work" class="nav-link">Case studies</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+            </nav>
+        </div>
+    </header>    <!-- Hero Curtain Section -->
+    <section class="hero-curtain">
+        <img class="hero-bg-media" src="assets/system-ai-logos/white-system-ai-brown-bg.jpg" alt="" aria-hidden="true">
+        <div class="hero-content">
+            <h1 class="hero-headline">AI workflows that delete busywork<br>for operations-heavy SMBs.</h1>
+            <div class="hero-btn">
+                <a class="cta-button" href="https://calendly.com/amrhasanin/consultation" target="_blank"
+                    rel="noopener noreferrer">
+                    <span>Let's talk</span>
+                    <div class="cta-icon-circle" aria-hidden="true">?</div>
                 </a>
-                <nav class="nav">
-                    <a href="#work" class="nav-link">Case studies</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Services</a>
-                    <a href="#reviews" class="nav-link">Reviews</a>
-                </nav>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <a href="https://calendly.com/amrhasanin/consultation" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-primary btn-sm desk">
-                        <div class="btn-text-wrap">
-                            <div class="btn-text">Let's talk</div>
-                            <div class="btn-text-hover">Let's talk</div>
-                        </div>
-                        <div class="btn-icon-box">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt=""
-                                class="btn-icon-hover">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt="" class="btn-icon">
-                        </div>
-                    </a>
-                    <button class="menu-btn" aria-label="Menu">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section with Curtain Gradient -->
-    <section class="hero">
-        <div class="section-bg">
-            <div class="img-cover" id="gradient-blinds-wrapper"
-                style="width: 100%; height: 100%; position: absolute; inset: 0;">
-                <!-- Gradient Blinds will be loaded via JS -->
-            </div>
-        </div>
-
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    AI workflows that delete busywork <br>
-                    for operations‑heavy SMBs.
-                </h1> <!-- 
-                <p class="hero-subtitle">
-                    System AI uses AI workflows to turn messy chats, emails, and manual data entry into fast, verifiable
-                    workflows that save your team hours every week.
-                </p> -->
-                <div class="hero-cta">
-                    <a href="https://calendly.com/amrhasanin/consultation" target="_blank" rel="noopener noreferrer"
-                        class="btn-arrow btn-primary">
-                        <div class="btn-text-wrap">
-                            <div class="btn-text">Let's talk</div>
-                            <div class="btn-text-hover">Let's talk</div>
-                        </div>
-                        <div class="btn-icon-box">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt=""
-                                class="btn-icon-hover">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt="" class="btn-icon">
-                        </div>
-                    </a>
-
-                    <a href="https://n8n.io/case-studies/system-ai/" target="_blank" rel="noopener noreferrer"
-                        class="featured-badge">
-                        <span>As featured on</span>
-                        <img src="assets/n8n_logos/n8n_pink+white_logo.svg" alt="n8n" class="featured-logo">
-                    </a>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- Marquee Section -->
-    <section class="marquee-section leftclick-section">
-        <div class="marquee-label-wrap">
-            <div class="marquee-label">Amr &amp; his team have worked with</div>
-        </div>
-        <div class="marquee-wrap">
-            <div class="marquee-track">
-                <!-- <span class="marquee-item">TakeSpotlight</span> -->
-                <span class="marquee-item">Homezone</span>
-                <span class="marquee-item">HASAD</span>
-                <span class="marquee-item">Montera Real Estate</span>
-                <span class="marquee-item">Bank Albilad</span>
-                <span class="marquee-item">Kestrl</span>
-                <span class="marquee-item">The Srama Group</span>
-                <span class="marquee-item">Gillis Family Chiropractic</span>
-                <!-- Duplicate for seamless loop -->
-                <span class="marquee-item">TakeSpotlight</span>
-                <span class="marquee-item">Homezone</span>
-                <span class="marquee-item">HASAD</span>
-                <span class="marquee-item">Montera Real Estate</span>
-                <span class="marquee-item">Bank Albilad</span>
-                <span class="marquee-item">Kestrl</span>
-                <span class="marquee-item">The Srama Group</span>
-                <span class="marquee-item">Gillis Family Chiropractic</span>
+    <div class="ticker-section">
+        <div class="ticker-label">Amr &amp; his team have worked with</div>
+        <div class="ticker-track">
+            <div class="ticker-items">
+                <span class="ticker-item">Homezone</span>
+                <span class="ticker-item">HASAD</span>
+                <span class="ticker-item">Montera Real Estate</span>
+                <span class="ticker-item">Bank Albilad</span>
+                <span class="ticker-item">Kestrl</span>
+                <span class="ticker-item">The Srama Group</span>
+                <span class="ticker-item">Gillis Family Chiropractic</span>
+                <span class="ticker-item">Homezone</span>
+                <span class="ticker-item">HASAD</span>
+                <span class="ticker-item">Montera Real Estate</span>
+                <span class="ticker-item">Bank Albilad</span>
+                <span class="ticker-item">Kestrl</span>
+                <span class="ticker-item">The Srama Group</span>
+                <span class="ticker-item">Gillis Family Chiropractic</span>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Stats Section -->
     <section class="stats-section">
@@ -428,344 +374,7 @@
             </div>
             <p class="copyright">&copy; 2026 System AI Solutions Ltd. All rights reserved.</p>
         </div>
-    </footer>
-
-    <!-- Gradient Blinds Integration -->
-    <script type="module">
-        import { Renderer, Program, Mesh, Triangle } from 'https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js';
-
-        const MAX_COLORS = 8;
-        const hexToRGB = hex => {
-            const c = hex.replace('#', '').padEnd(6, '0');
-            const r = parseInt(c.slice(0, 2), 16) / 255;
-            const g = parseInt(c.slice(2, 4), 16) / 255;
-            const b = parseInt(c.slice(4, 6), 16) / 255;
-            return [r, g, b];
-        };
-
-        const prepStops = stops => {
-            const base = (stops && stops.length ? stops : ['#FF9FFC', '#5227FF']).slice(0, MAX_COLORS);
-            if (base.length === 1) base.push(base[0]);
-            while (base.length < MAX_COLORS) base.push(base[base.length - 1]);
-            const arr = [];
-            for (let i = 0; i < MAX_COLORS; i++) arr.push(hexToRGB(base[i]));
-            const count = Math.max(2, Math.min(MAX_COLORS, stops?.length ?? 2));
-            return { arr, count };
-        };
-
-        class GradientBlinds {
-            constructor(container, options = {}) {
-                this.container = container;
-
-                const {
-                    dpr = window.devicePixelRatio || 1,
-                    paused = false,
-                    gradientColors = ['#FF9FFC', '#5227FF'],
-                    angle = 0,
-                    noise = 0.3,
-                    blindCount = 16,
-                    blindMinWidth = 60,
-                    mouseDampening = 0.15,
-                    mirrorGradient = false,
-                    spotlightRadius = 0.5,
-                    spotlightSoftness = 1,
-                    spotlightOpacity = 1,
-                    distortAmount = 0,
-                    shineDirection = 'right',
-                    mixBlendMode = 'lighten'
-                } = options;
-
-                this.mouseDampening = mouseDampening;
-                this.paused = paused;
-                this.blindMinWidth = blindMinWidth;
-                this.blindCount = blindCount;
-
-                if (mixBlendMode) {
-                    this.container.style.mixBlendMode = mixBlendMode;
-                }
-
-                this.container.style.position = 'relative';
-                this.container.style.overflow = 'hidden';
-
-                this.renderer = new Renderer({
-                    dpr,
-                    alpha: true,
-                    antialias: true
-                });
-
-                const gl = this.renderer.gl;
-                this.canvas = gl.canvas;
-                this.canvas.style.width = '100%';
-                this.canvas.style.height = '100%';
-                this.canvas.style.display = 'block';
-                this.container.appendChild(this.canvas);
-
-                const vertex = `
-        attribute vec2 position;
-        attribute vec2 uv;
-        varying vec2 vUv;
-
-        void main() {
-        vUv = uv;
-        gl_Position = vec4(position, 0.0, 1.0);
-        }
-        `;
-
-                const fragment = `
-        #ifdef GL_ES
-        precision mediump float;
-        #endif
-
-        uniform vec3  iResolution;
-        uniform vec2  iMouse;
-        uniform float iTime;
-
-        uniform float uAngle;
-        uniform float uNoise;
-        uniform float uBlindCount;
-        uniform float uSpotlightRadius;
-        uniform float uSpotlightSoftness;
-        uniform float uSpotlightOpacity;
-        uniform float uMirror;
-        uniform float uDistort;
-        uniform float uShineFlip;
-        uniform vec3  uColor0;
-        uniform vec3  uColor1;
-        uniform vec3  uColor2;
-        uniform vec3  uColor3;
-        uniform vec3  uColor4;
-        uniform vec3  uColor5;
-        uniform vec3  uColor6;
-        uniform vec3  uColor7;
-        uniform int   uColorCount;
-
-        varying vec2 vUv;
-
-        float rand(vec2 co){
-        return fract(sin(dot(co, vec2(12.9898,78.233))) * 43758.5453);
-        }
-
-        vec2 rotate2D(vec2 p, float a){
-        float c = cos(a);
-        float s = sin(a);
-        return mat2(c, -s, s, c) * p;
-        }
-
-        vec3 getGradientColor(float t){
-        float tt = clamp(t, 0.0, 1.0);
-        int count = uColorCount;
-        if (count < 2) count = 2;
-        float scaled = tt * float(count - 1);
-        float seg = floor(scaled);
-        float f = fract(scaled);
-
-        if (seg < 1.0) return mix(uColor0, uColor1, f);
-        if (seg < 2.0 && count > 2) return mix(uColor1, uColor2, f);
-        if (seg < 3.0 && count > 3) return mix(uColor2, uColor3, f);
-        if (seg < 4.0 && count > 4) return mix(uColor3, uColor4, f);
-        if (seg < 5.0 && count > 5) return mix(uColor4, uColor5, f);
-        if (seg < 6.0 && count > 6) return mix(uColor5, uColor6, f);
-        if (seg < 7.0 && count > 7) return mix(uColor6, uColor7, f);
-        if (count > 7) return uColor7;
-        if (count > 6) return uColor6;
-        if (count > 5) return uColor5;
-        if (count > 4) return uColor4;
-        if (count > 3) return uColor3;
-        if (count > 2) return uColor2;
-        return uColor1;
-        }
-
-        void mainImage( out vec4 fragColor, in vec2 fragCoord )
-        {
-            vec2 uv0 = fragCoord.xy / iResolution.xy;
-
-            float aspect = iResolution.x / iResolution.y;
-            vec2 p = uv0 * 2.0 - 1.0;
-            p.x *= aspect;
-            vec2 pr = rotate2D(p, uAngle);
-            pr.x /= aspect;
-            vec2 uv = pr * 0.5 + 0.5;
-
-            vec2 uvMod = uv;
-            if (uDistort > 0.0) {
-            float a = uvMod.y * 6.0;
-            float b = uvMod.x * 6.0;
-            float w = 0.01 * uDistort;
-            uvMod.x += sin(a) * w;
-            uvMod.y += cos(b) * w;
-            }
-            float t = uvMod.x;
-            if (uMirror > 0.5) {
-            t = 1.0 - abs(1.0 - 2.0 * fract(t));
-            }
-            vec3 base = getGradientColor(t);
-
-            vec2 offset = vec2(iMouse.x/iResolution.x, iMouse.y/iResolution.y);
-            float d = length(uv0 - offset);
-            float r = max(uSpotlightRadius, 1e-4);
-            float dn = d / r;
-            float spot = (1.0 - 2.0 * pow(dn, uSpotlightSoftness)) * uSpotlightOpacity;
-            vec3 cir = vec3(spot);
-            float stripe = fract(uvMod.x * max(uBlindCount, 1.0));
-            if (uShineFlip > 0.5) stripe = 1.0 - stripe;
-            vec3 ran = vec3(stripe);
-
-            vec3 col = cir + base - ran;
-            col += (rand(gl_FragCoord.xy + iTime) - 0.5) * uNoise;
-
-            fragColor = vec4(col, 1.0);
-        }
-
-        void main() {
-            vec4 color;
-            mainImage(color, vUv * iResolution.xy);
-            gl_FragColor = color;
-        }
-        `;
-
-                const { arr: colorArr, count: colorCount } = prepStops(gradientColors);
-
-                this.uniforms = {
-                    iResolution: { value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1] },
-                    iMouse: { value: [0, 0] },
-                    iTime: { value: 0 },
-                    uAngle: { value: (angle * Math.PI) / 180 },
-                    uNoise: { value: noise },
-                    uBlindCount: { value: Math.max(1, blindCount) },
-                    uSpotlightRadius: { value: spotlightRadius },
-                    uSpotlightSoftness: { value: spotlightSoftness },
-                    uSpotlightOpacity: { value: spotlightOpacity },
-                    uMirror: { value: mirrorGradient ? 1 : 0 },
-                    uDistort: { value: distortAmount },
-                    uShineFlip: { value: shineDirection === 'right' ? 1 : 0 },
-                    uColor0: { value: colorArr[0] },
-                    uColor1: { value: colorArr[1] },
-                    uColor2: { value: colorArr[2] },
-                    uColor3: { value: colorArr[3] },
-                    uColor4: { value: colorArr[4] },
-                    uColor5: { value: colorArr[5] },
-                    uColor6: { value: colorArr[6] },
-                    uColor7: { value: colorArr[7] },
-                    uColorCount: { value: colorCount }
-                };
-
-                this.program = new Program(gl, { vertex, fragment, uniforms: this.uniforms });
-                this.geometry = new Triangle(gl);
-                this.mesh = new Mesh(gl, { geometry: this.geometry, program: this.program });
-
-                this.firstResize = true;
-                this.mouseTarget = [0, 0];
-                this.lastTime = 0;
-
-                this.resize = () => {
-                    const rect = this.container.getBoundingClientRect();
-                    this.renderer.setSize(rect.width, rect.height);
-                    this.uniforms.iResolution.value = [gl.drawingBufferWidth, gl.drawingBufferHeight, 1];
-
-                    if (this.blindMinWidth && this.blindMinWidth > 0) {
-                        const maxByMinWidth = Math.max(1, Math.floor(rect.width / this.blindMinWidth));
-                        const effective = this.blindCount ? Math.min(this.blindCount, maxByMinWidth) : maxByMinWidth;
-                        this.uniforms.uBlindCount.value = Math.max(1, effective);
-                    } else {
-                        this.uniforms.uBlindCount.value = Math.max(1, this.blindCount);
-                    }
-
-                    if (this.firstResize) {
-                        this.firstResize = false;
-                        const cx = gl.drawingBufferWidth / 2;
-                        const cy = gl.drawingBufferHeight / 2;
-                        this.uniforms.iMouse.value = [cx, cy];
-                        this.mouseTarget = [cx, cy];
-                    }
-                };
-
-                this.resize();
-                this.ro = new ResizeObserver(this.resize);
-                this.ro.observe(this.container);
-
-                this.onPointerMove = e => {
-                    const rect = this.canvas.getBoundingClientRect();
-                    const scale = this.renderer.dpr || 1;
-                    const x = (e.clientX - rect.left) * scale;
-                    const y = (rect.height - (e.clientY - rect.top)) * scale;
-                    this.mouseTarget = [x, y];
-                    if (this.mouseDampening <= 0) {
-                        this.uniforms.iMouse.value = [x, y];
-                    }
-                };
-                this.canvas.addEventListener('pointermove', this.onPointerMove);
-
-                this.loop = (t) => {
-                    this.raf = requestAnimationFrame(this.loop);
-                    this.uniforms.iTime.value = t * 0.001;
-
-                    if (this.mouseDampening > 0) {
-                        if (!this.lastTime) this.lastTime = t;
-                        const dt = (t - this.lastTime) / 1000;
-                        this.lastTime = t;
-                        const tau = Math.max(1e-4, this.mouseDampening);
-                        let factor = 1 - Math.exp(-dt / tau);
-                        if (factor > 1) factor = 1;
-
-                        const target = this.mouseTarget;
-                        const cur = this.uniforms.iMouse.value;
-                        cur[0] += (target[0] - cur[0]) * factor;
-                        cur[1] += (target[1] - cur[1]) * factor;
-                    } else {
-                        this.lastTime = t;
-                    }
-
-                    if (!this.paused && this.program && this.mesh) {
-                        try {
-                            this.renderer.render({ scene: this.mesh });
-                        } catch (e) {
-                            console.error(e);
-                        }
-                    }
-                };
-                this.raf = requestAnimationFrame(this.loop);
-            }
-
-            destroy() {
-                if (this.raf) cancelAnimationFrame(this.raf);
-                this.canvas.removeEventListener('pointermove', this.onPointerMove);
-                this.ro.disconnect();
-                if (this.canvas.parentElement === this.container) {
-                    this.container.removeChild(this.canvas);
-                }
-
-                const callIfFn = (obj, key) => {
-                    if (obj && typeof obj[key] === 'function') {
-                        obj[key].call(obj);
-                    }
-                };
-                callIfFn(this.program, 'remove');
-                callIfFn(this.geometry, 'remove');
-                callIfFn(this.mesh, 'remove');
-                callIfFn(this.renderer, 'destroy');
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const wrapper = document.getElementById("gradient-blinds-wrapper");
-
-            // Initialize GradientBlinds with user provided options
-            new GradientBlinds(wrapper, {
-                gradientColors: ["#141414", "#141414"],
-                angle: 0,
-                noise: 0,
-                blindCount: 44,
-                blindMinWidth: 10,
-                mouseDampening: 0.3,
-                mirrorGradient: false,
-                spotlightRadius: 0.5,
-                spotlightSoftness: 1.5,
-                spotlightOpacity: 0.4,
-                distortAmount: 0,
-                shineDirection: "none"
-            });
-        });
-    </script>
+    </footer>    <script src="navbar.js"></script>
 </body>
 
 </html>

@@ -54,37 +54,21 @@
 <body style="background-color: var(--color-gray-50);">
     <!-- Header -->
     <header class="header">
-        <div class="common-wrap">
-            <div class="header-inner">
-                <a href="/" class="logo">
-                    <img src="assets/system-ai-logos/systemai-logo-v3.svg" alt="System AI">
-                </a>
-                <nav class="nav">
-                    <a href="/#work" class="nav-link">Case studies</a>
-                    <a href="/#about" class="nav-link">About</a>
-                    <a href="/#services" class="nav-link">Services</a>
-                    <a href="/#reviews" class="nav-link">Reviews</a>
-                </nav>
-                <div style="display: flex; gap: 1rem; align-items: center;">
-                    <a href="https://calendly.com/amrhasanin/consultation" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm desk">
-                        <div class="btn-text-wrap">
-                            <div class="btn-text">Let's talk</div>
-                            <div class="btn-text-hover">Let's talk</div>
-                        </div>
-                        <div class="btn-icon-box">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt=""
-                                class="btn-icon-hover">
-                            <img src="assets/arrows/white-arrow-points-right-black-bg.svg" alt="" class="btn-icon">
-                        </div>
-                    </a>
-                    <button class="menu-btn" aria-label="Menu">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+        <div class="header-inner">
+            <a href="/" class="logo-link">
+                <img class="logo-img" src="assets/system-ai-logos/systemai-logo-v3.svg" alt="System AI">
+            </a>
+            <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" aria-label="Primary navigation">
+                <a href="/#work" class="nav-link">Case studies</a>
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#services" class="nav-link">Services</a>
+                <a href="/#reviews" class="nav-link">Reviews</a>
+            </nav>
         </div>
     </header>
 
@@ -165,5 +149,6 @@
             <p class="copyright">&copy; 2026 System AI Solutions Ltd. All rights reserved.</p>
         </div>
     </footer>
+    <script src="navbar.js"></script>
 </body>
 </html>
