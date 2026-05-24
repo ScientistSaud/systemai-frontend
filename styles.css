@@ -2408,6 +2408,14 @@ a {
         text-wrap: balance;
     }
 
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.18rem);
+        line-height: 1.35;
+        max-width: 25ch;
+        margin: 0 0 clamp(18px, 4vw, 24px) 0;
+        text-align: left;
+    }
+
     .hero-cta {
         width: auto;
         align-items: flex-start;
