@@ -1,0 +1,9 @@
+<svg width="1200" height="185" viewBox="0 0 1200 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+<text y="130" fill="#00264C" font-family="Arial Rounded MT Bold, Arial, Helvetica, sans-serif" font-size="174" font-weight="700">
+<tspan x="-12" letter-spacing="-9">T</tspan><tspan dx="-25" letter-spacing="-9">hird</tspan>
+<tspan x="390" letter-spacing="-7">Bridge</tspan>
+</text>
+<g transform="translate(940 0) scale(2.766)">
+<path d="M0 0.5V3.61813H9.66112C11.5045 3.61813 12.9992 5.11252 12.9992 6.95622V30.5155H20.8393V6.95622C20.8393 5.11283 22.3336 3.61813 24.1773 3.61813H34.0028C35.8462 3.61813 37.3409 5.11252 37.3409 6.95622V39.0077H48.7762V6.95622C48.7762 5.11283 50.2706 3.61813 52.1143 3.61813H61.9398C63.7832 3.61813 65.2779 5.11252 65.2779 6.95622V47.5H80.3084V6.95622C80.3084 5.11283 81.8028 3.61813 83.6465 3.61813H94V0.5H0Z" fill="#00264C"/>
+</g>
+</svg>
