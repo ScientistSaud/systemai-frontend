@@ -1,6 +1,15 @@
 [build]
   publish = "."
 
+# Tracking short links: systemai.co.uk/<id> -> n8n logs the click and 302s
+# to the link's destination (Supabase `links` table). force = false means
+# this ONLY fires when no real file matches, so site pages are unaffected.
+[[redirects]]
+  from = "/:id"
+  to = "https://n8n.systemai.co.uk/webhook/go?id=:id"
+  status = 302
+  force = false
+
 [[headers]]
   for = "/*"
   [headers.values]
