@@ -1,6 +1,17 @@
 [build]
   publish = "."
 
+# jsmcc masjid-screen QR: pinned DIRECT so a code printed on a physical
+# screen never depends on the n8n box being up (Amr, 30 Aug 2026, TG 1922).
+# First match wins, so this shields /jsmcc-cafe from the tracker catch-all
+# below. Retarget by editing this rule (stays 302 so phones don't cache it);
+# scans still count via utm_campaign in GA/Clarity.
+[[redirects]]
+  from = "/jsmcc-cafe"
+  to = "https://systemai.co.uk/?utm_source=jsmcc&utm_medium=shortlink&utm_campaign=jsmcc-cafe"
+  status = 302
+  force = false
+
 # Tracking short links: systemai.co.uk/<id> -> n8n logs the click and 302s
 # to the link's destination (Supabase `links` table). force = false means
 # this ONLY fires when no real file matches, so site pages are unaffected.
